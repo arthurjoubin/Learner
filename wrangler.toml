@@ -1,5 +1,17 @@
 name = "learner"
-compatibility_date = "2026-01-11"
 
-[assets]
-directory = "./dist"
+[env.production]
+name = "learner"
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.jsx", "src/**/*.js", "src/**/*.css", "index.html", "*.config.js"]
+
+[build.upload]
+format = "service-worker"
+
+[[build.upload.rules]]
+type = "CompiledContentType"
+globs = ["**/*.eot", "**/*.otf", "**/*.ttf", "**/*.woff", "**/*.woff2"]
+fallthrough = true

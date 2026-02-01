@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": ["/assets/*"],
+  "rules": [
+    {
+      "type": "rewrite",
+      "pattern": "^/.*",
+      "file": "/index.html"
+    }
+  ]
+}
